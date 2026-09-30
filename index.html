@@ -5,12 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I Putu Devano Sidhi Pratama | Developer Portfolio</title>
     
+    <!-- SEO & OPEN GRAPH (SOCIAL SHARE PREVIEW) -->
+    <meta name="description" content="Portofolio I Putu Devano Sidhi Pratama - Developer & Mahasiswa Telkom University Surabaya yang berfokus pada sistem dashboard, database, dan otomatisasi data.">
+    <meta property="og:title" content="I Putu Devano Sidhi Pratama | Developer Portfolio">
+    <meta property="og:description" content="Spesialis Pengembangan Dashboard, Database Management & Otomatisasi Data.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nono-fl4sh.github.io/portfolio/">
+    <!-- Gantilah URL gambar di bawah dengan screenshot portofolio kamu jika sudah ada -->
+    <meta property="og:image" content="https://nono-fl4sh.github.io/portfolio/assets/preview.png">
+
     <!-- Google Fonts & Font Awesome Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
     <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -24,9 +36,7 @@
             </div>
             
             <ul class="nav-links">
-                <!-- ELEMEN INDIKATOR SLIDING GLASS -->
                 <div class="nav-indicator"></div>
-
                 <li><a href="#about" class="active" data-id="About" data-en="About">About</a></li>
                 <li><a href="#skills" data-id="Skills" data-en="Skills">Skills</a></li>
                 <li><a href="#projects" data-id="Projects" data-en="Projects">Projects</a></li>
@@ -34,7 +44,6 @@
             </ul>
 
             <div class="nav-actions">
-                <!-- LANGUAGE SWITCHER -->
                 <div class="lang-switch">
                     <button class="lang-btn active" data-lang="id">ID</button>
                     <span>/</span>
@@ -59,13 +68,16 @@
                     <span data-id="Halo, Saya" data-en="Hi, I am">Halo, Saya</span> <br>
                     <span class="gradient-accent">I Putu Devano Sidhi Pratama</span>
                 </h1>
-                <p data-id="Saya seorang Developer & Mahasiswa yang berfokus pada pengembangan sistem dashboard, pengelolaan database, dan otomatisasi data untuk membantu visualisasi performa bisnis yang efisien." 
-                   data-en="I am a Developer & Student focused on dashboard system development, database management, and data automation to help efficient business performance visualization.">
-                    Saya seorang Developer & Mahasiswa yang berfokus pada pengembangan sistem dashboard, pengelolaan database, dan otomatisasi data untuk membantu visualisasi performa bisnis yang efisien.
+                <p data-id="Saya seorang Developer & Mahasiswa Telkom University Surabaya yang berfokus pada pengembangan sistem dashboard, pengelolaan database, dan otomatisasi data untuk membantu visualisasi performa bisnis yang efisien." 
+                   data-en="I am a Developer & Student at Telkom University Surabaya focused on dashboard system development, database management, and data automation to help efficient business performance visualization.">
+                    Saya seorang Developer & Mahasiswa Telkom University Surabaya yang berfokus pada pengembangan sistem dashboard, pengelolaan database, dan otomatisasi data untuk membantu visualisasi performa bisnis yang efisien.
                 </p>
                 <div class="hero-cta">
                     <a href="#projects" class="nav-btn" data-id="View Projects" data-en="View Projects">View Projects</a>
-                    <a href="#contact" class="btn-secondary" data-id="Contact" data-en="Contact">Contact</a>
+                    <!-- TOMBOL DOWNLOAD CV -->
+                    <a href="assets/CV_Devano.pdf" download class="btn-secondary" data-id="Download CV" data-en="Download CV">
+                        <i class="fa-solid fa-download"></i> Download CV
+                    </a>
                 </div>
             </div>
         </section>
@@ -78,11 +90,8 @@
             </div>
 
             <div class="skills-grid">
-                <!-- Skill 1 -->
                 <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-laptop-code"></i>
-                    </div>
+                    <div class="skill-icon"><i class="fa-solid fa-laptop-code"></i></div>
                     <h3>Frontend Development</h3>
                     <p data-id="Membangun antarmuka web dashboard yang responsif, interaktif, dan intuitif." data-en="Building responsive, interactive, and intuitive dashboard web interfaces.">Membangun antarmuka web dashboard yang responsif, interaktif, dan intuitif.</p>
                     <div class="skill-tags">
@@ -93,11 +102,8 @@
                     </div>
                 </div>
 
-                <!-- Skill 2 -->
                 <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-database"></i>
-                    </div>
+                    <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
                     <h3>Backend & Database</h3>
                     <p data-id="Pengelolaan basis data relasional, manipulasi query SQL, dan arsitektur server." data-en="Relational database management, SQL query manipulation, and server architecture.">Pengelolaan basis data relasional, manipulasi query SQL, dan arsitektur server.</p>
                     <div class="skill-tags">
@@ -108,11 +114,8 @@
                     </div>
                 </div>
 
-                <!-- Skill 3 -->
                 <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fa-solid fa-file-excel"></i>
-                    </div>
+                    <div class="skill-icon"><i class="fa-solid fa-file-excel"></i></div>
                     <h3>Data & Automation</h3>
                     <p data-id="Otomatisasi pengolahan data mentah dan rekapitulasi laporan secara presisi." data-en="Automation of raw data processing and precise report summarization.">Otomatisasi pengolahan data mentah dan rekapitulasi laporan secara presisi.</p>
                     <div class="skill-tags">
@@ -131,132 +134,85 @@
                 <h2 class="section-title" data-id="Dashboards & Systems" data-en="Dashboards & Systems">Dashboards & Systems</h2>
             </div>
 
-            <!-- Filter Buttons -->
             <div class="project-filters">
                 <button class="filter-btn active" data-filter="all" data-id="All" data-en="All">All</button>
                 <button class="filter-btn" data-filter="analytics" data-id="Analytics" data-en="Analytics">Analytics</button>
                 <button class="filter-btn" data-filter="operations" data-id="Operations" data-en="Operations">Operations</button>
             </div>
 
-            <!-- Projects Grid (3 Atas & 2 Bawah) -->
             <div class="projects-grid custom-5-grid">
                 
-                <!-- Project 1: Dashboard GMB -->
+                <!-- Project 1 -->
                 <div class="project-card" data-category="analytics">
-                    <div class="project-img">
-                        <i class="fa-solid fa-store"></i>
-                    </div>
+                    <div class="project-img"><i class="fa-solid fa-store"></i></div>
                     <div class="project-info">
                         <h3>Dashboard GMB (Google My Business)</h3>
-                        <p data-id="System monitoring performa Google My Business untuk menganalisis visibilitas cabang, rating ulasan, interaksi pelanggan, serta performa pencarian lokal secara real-time."
-                           data-en="Google My Business performance monitoring system to analyze branch visibility, review ratings, customer interactions, and real-time local search performance.">
-                           System monitoring performa Google My Business untuk menganalisis visibilitas cabang, rating ulasan, interaksi pelanggan, serta performa pencarian lokal secara real-time.
-                        </p>
+                        <p>System monitoring performa Google My Business untuk menganalisis visibilitas cabang, rating ulasan, dan interaksi pelanggan secara real-time.</p>
                         <div class="project-footer">
                             <div class="skill-tags">
-                                <span class="tag">PHP</span>
-                                <span class="tag">MariaDB</span>
-                                <span class="tag">JS Engine</span>
+                                <span class="tag">PHP</span><span class="tag">MariaDB</span>
                             </div>
-                            <div class="project-links">
-                                <a href="#contact" title="Request Access / Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            </div>
+                            <button class="btn-detail" onclick="openModal('gmb')">Detail <i class="fa-solid fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2: Dashboard Penjualan H1 -->
+                <!-- Project 2 -->
                 <div class="project-card" data-category="analytics">
-                    <div class="project-img">
-                        <i class="fa-solid fa-chart-line"></i>
-                    </div>
+                    <div class="project-img"><i class="fa-solid fa-chart-line"></i></div>
                     <div class="project-info">
                         <h3>Dashboard Penjualan H1</h3>
-                        <p data-id="Dashboard analisis penjualan unit H1 untuk melacak pencapaian target sales, tren penjualan harian/bulanan, kontribusi produk, dan rekapitulasi data transaksi secara terpusat."
-                           data-en="H1 unit sales analytics dashboard to track sales target achievement, daily/monthly sales trends, product contribution, and centralized transaction summarization.">
-                           Dashboard analisis penjualan unit H1 untuk melacak pencapaian target sales, tren penjualan harian/bulanan, kontribusi produk, dan rekapitulasi data transaksi secara terpusat.
-                        </p>
+                        <p>Dashboard analisis penjualan unit H1 untuk melacak pencapaian target sales, tren harian/bulanan, dan rekapitulasi transaksi.</p>
                         <div class="project-footer">
                             <div class="skill-tags">
-                                <span class="tag">PHP</span>
-                                <span class="tag">MySQL</span>
-                                <span class="tag">Chart.js</span>
+                                <span class="tag">PHP</span><span class="tag">MySQL</span>
                             </div>
-                            <div class="project-links">
-                                <a href="#contact" title="Request Access / Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            </div>
+                            <button class="btn-detail" onclick="openModal('h1')">Detail <i class="fa-solid fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 3: Dashboard Bengkel -->
+                <!-- Project 3 -->
                 <div class="project-card" data-category="analytics">
-                    <div class="project-img">
-                        <i class="fa-solid fa-wrench"></i>
-                    </div>
+                    <div class="project-img"><i class="fa-solid fa-wrench"></i></div>
                     <div class="project-info">
                         <h3>Dashboard Performa Bengkel</h3>
-                        <p data-id="Platform pemantauan performa bengkel berbasis angka & metrik kuantitatif, mencakup volume unit entry, pendapatan jasa, efisiensi mekanik, hingga analisis target bulanan."
-                           data-en="Quantitative metrics-based workshop performance monitoring platform, covering unit entry volume, service revenue, mechanic efficiency, and monthly target analysis.">
-                           Platform pemantauan performa bengkel berbasis angka & metrik kuantitatif, mencakup volume unit entry, pendapatan jasa, efisiensi mekanik, hingga analisis target bulanan.
-                        </p>
+                        <p>Platform pemantauan performa bengkel berbasis angka kuantitatif, mencakup unit entry, pendapatan jasa, dan efisiensi mekanik.</p>
                         <div class="project-footer">
                             <div class="skill-tags">
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">MariaDB</span>
-                                <span class="tag">Tailwind</span>
+                                <span class="tag">JavaScript</span><span class="tag">MariaDB</span>
                             </div>
-                            <div class="project-links">
-                                <a href="#contact" title="Request Access / Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            </div>
+                            <button class="btn-detail" onclick="openModal('bengkel')">Detail <i class="fa-solid fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 4: Dashboard Absensi BEST -->
+                <!-- Project 4 -->
                 <div class="project-card" data-category="operations">
-                    <div class="project-img">
-                        <i class="fa-solid fa-user-check"></i>
-                    </div>
+                    <div class="project-img"><i class="fa-solid fa-user-check"></i></div>
                     <div class="project-info">
                         <h3>Dashboard Absensi BEST</h3>
-                        <p data-id="Sistem rekapitulasi dan pemantauan absensi karyawan BEST secara terintegrasi, menampilkan tingkat kehadiran, keterlambatan, hingga grafik kepatuhan kerja harian."
-                           data-en="Integrated BEST employee attendance monitoring and summarization system, displaying attendance rates, tardiness metrics, and daily compliance graphs.">
-                           Sistem rekapitulasi dan pemantauan absensi karyawan BEST secara terintegrasi, menampilkan tingkat kehadiran, keterlambatan, hingga grafik kepatuhan kerja harian.
-                        </p>
+                        <p>Sistem rekapitulasi dan pemantauan absensi karyawan BEST secara terintegrasi, menampilkan kehadiran dan grafik kepatuhan kerja.</p>
                         <div class="project-footer">
                             <div class="skill-tags">
-                                <span class="tag">PHP</span>
-                                <span class="tag">MySQL</span>
-                                <span class="tag">Bootstrap</span>
+                                <span class="tag">PHP</span><span class="tag">Bootstrap</span>
                             </div>
-                            <div class="project-links">
-                                <a href="#contact" title="Request Access / Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            </div>
+                            <button class="btn-detail" onclick="openModal('absensi')">Detail <i class="fa-solid fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 5: Dashboard Customer Validation Monitor -->
+                <!-- Project 5 -->
                 <div class="project-card" data-category="operations">
-                    <div class="project-img">
-                        <i class="fa-solid fa-user-shield"></i>
-                    </div>
+                    <div class="project-img"><i class="fa-solid fa-user-shield"></i></div>
                     <div class="project-info">
                         <h3>Customer Validation Monitor</h3>
-                        <p data-id="Portal pemantauan dan verifikasi status validasi data pelanggan, memudahkan pelacakan proses kelengkapan dokumen, approval status, dan akurasi data konsumen."
-                           data-en="Customer data validation status tracking portal, simplifying the monitoring of document completeness, approval status, and consumer data accuracy.">
-                           Portal pemantauan dan verifikasi status validasi data pelanggan, memudahkan pelacakan proses kelengkapan dokumen, approval status, dan akurasi data konsumen.
-                        </p>
+                        <p>Portal pemantauan dan verifikasi status validasi data pelanggan untuk mempermudah pelacakan kelengkapan dokumen.</p>
                         <div class="project-footer">
                             <div class="skill-tags">
-                                <span class="tag">HTML/CSS</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">SQL Query</span>
+                                <span class="tag">JS</span><span class="tag">SQL Query</span>
                             </div>
-                            <div class="project-links">
-                                <a href="#contact" title="Request Access / Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            </div>
+                            <button class="btn-detail" onclick="openModal('validation')">Detail <i class="fa-solid fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -297,26 +253,36 @@
                     </div>
                 </div>
 
-                <!-- Contact Form -->
-                <form id="contactForm" onsubmit="event.preventDefault(); handleFormSubmit();">
+                <!-- Contact Form (Terkoneksi EmailJS) -->
+                <form id="contactForm">
                     <div class="form-group">
                         <label data-id="Your Name" data-en="Your Name">Your Name</label>
-                        <input type="text" placeholder="John Doe" required>
+                        <input type="text" id="from_name" placeholder="John Doe" required>
                     </div>
                     <div class="form-group">
                         <label data-id="Your Email" data-en="Your Email">Your Email</label>
-                        <input type="email" placeholder="john@example.com" required>
+                        <input type="email" id="reply_to" placeholder="john@example.com" required>
                     </div>
                     <div class="form-group">
                         <label data-id="Message" data-en="Message">Message</label>
-                        <textarea rows="4" placeholder="..." required></textarea>
+                        <textarea id="message" rows="4" placeholder="..." required></textarea>
                     </div>
-                    <button type="submit" class="btn-submit" data-id="Send Message" data-en="Send Message">Send Message</button>
+                    <button type="submit" id="btnSend" class="btn-submit" data-id="Send Message" data-en="Send Message">Send Message</button>
                 </form>
             </div>
         </section>
 
     </main>
+
+    <!-- MODAL POP-UP DETAIL PROYEK -->
+    <div id="projectModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModalDirect()">&times;</button>
+            <div id="modalBody">
+                <!-- Konten Modal Diisi Otomatis Lewat JS -->
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer>
