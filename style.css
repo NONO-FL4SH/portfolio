@@ -1,14 +1,14 @@
 /* --- CSS VARIABLES & RESET --- */
 :root {
     /* Color Palette: Merah, Hitam, Putih */
-    --bg-dark: #070708;                     /* Black Base */
-    --bg-card: rgba(18, 18, 20, 0.75);       /* Deep Black Glass */
-    --bg-glass-hover: rgba(239, 68, 68, 0.2); /* Crimson Red Glow */
+    --bg-dark: #070708;
+    --bg-card: rgba(18, 18, 20, 0.75);
+    --bg-glass-hover: rgba(239, 68, 68, 0.2);
     
     --border-color: rgba(255, 255, 255, 0.08);
     --border-red: rgba(239, 68, 68, 0.6);
     
-    --primary: #ef4444;                     /* Crimson Red */
+    --primary: #ef4444;
     --primary-glow: rgba(239, 68, 68, 0.45);
     --white: #ffffff;
     
@@ -459,8 +459,6 @@ section {
     display: flex;
     flex-direction: column;
     backdrop-filter: blur(16px);
-    opacity: 1;
-    transform: translateY(0);
     transition: var(--transition-smooth);
 }
 
@@ -687,7 +685,7 @@ footer {
     }
 }
 
-/* --- FLOATING BOTTOM NAVBAR UNTUK MOBILE / HP (WAJIB DI PALING BAWAH) --- */
+/* --- FIX MOBILE FLOATING NAVBAR --- */
 @media screen and (max-width: 680px) {
     .projects-grid.custom-5-grid .project-card {
         width: 100%;
@@ -698,10 +696,28 @@ footer {
         text-align: center;
     }
     section {
-        padding: 60px 0;
+        padding: 50px 0;
     }
 
-    /* Paksa Nav Links Melayang di Bawah Layar HP */
+    /* Ubah pembungkus Navbar Atas agar tidak mengunci tampilan */
+    .navbar {
+        position: absolute !important;
+        background: transparent !important;
+        border-bottom: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    .nav-container {
+        padding: 1rem 1.5rem;
+    }
+
+    /* Sembunyikan tombol 'Contact Me' atas di HP */
+    .nav-actions .nav-btn {
+        display: none !important;
+    }
+
+    /* BUAT NAV LINKS MELAYANG KAPSUL DI BAWAH */
     .nav-links {
         display: flex !important;
         position: fixed !important;
@@ -709,33 +725,34 @@ footer {
         top: auto !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
-        width: calc(100% - 40px) !important;
+        width: calc(100% - 32px) !important;
         max-width: 380px !important;
-        justify-content: space-around !important;
+        justify-content: space-between !important;
         align-items: center !important;
-        background: rgba(18, 18, 20, 0.9) !important;
+        background: rgba(14, 14, 18, 0.92) !important;
         backdrop-filter: blur(20px) !important;
         -webkit-backdrop-filter: blur(20px) !important;
         border: 1px solid var(--border-red) !important;
         border-radius: 40px !important;
-        padding: 6px !important;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px var(--primary-glow) !important;
+        padding: 5px 8px !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85), 0 0 20px var(--primary-glow) !important;
         z-index: 9999 !important;
     }
 
+    .nav-links li {
+        flex: 1;
+        text-align: center;
+    }
+
     .nav-links a {
-        font-size: 0.8rem !important;
-        padding: 8px 12px !important;
+        font-size: 0.78rem !important;
+        padding: 8px 0 !important;
         border-radius: 30px !important;
         white-space: nowrap !important;
     }
 
     .nav-indicator {
         border-radius: 30px !important;
-    }
-
-    .nav-actions .nav-btn {
-        display: none !important;
     }
 
     footer {

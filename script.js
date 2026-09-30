@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // KEMBALIKAN POSISI SCROLL KE PALING ATAS PAS HP DIBUKA
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
     /* --- 1. LANGUAGE SWITCHER LOGIC --- */
     const langBtns = document.querySelectorAll('.lang-btn');
     let currentLang = 'id';
@@ -56,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function moveNavIndicator() {
         const activeLink = document.querySelector('.nav-links a.active');
         if (activeLink && navIndicator) {
-            // Hitung posisi relatif tombol terhadap parent ul.nav-links
             const parentLeft = activeLink.parentElement.parentElement.getBoundingClientRect().left;
             const linkLeft = activeLink.getBoundingClientRect().left;
             
@@ -70,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         sections.forEach(current => {
             const sectionHeight = current.offsetHeight;
-            const sectionTop = current.offsetTop - 180;
+            const sectionTop = current.offsetTop - 200;
             const sectionId = current.getAttribute('id');
 
             if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
@@ -78,19 +83,22 @@ document.addEventListener('DOMContentLoaded', () => {
                     link.classList.remove('active');
                     if (link.getAttribute('href') === `#${sectionId}`) {
                         link.classList.add('active');
-                        moveNavIndicator(); // Geser indicator secara meluncur
+                        moveNavIndicator();
                     }
                 });
             }
         });
     }
 
-    // Pemicu Awal
-    setTimeout(moveNavIndicator, 100);
+    // Inisialisasi Posisi Awal
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+        moveNavIndicator();
+    }, 100);
+
     window.addEventListener('scroll', highlightNavOnScroll);
     window.addEventListener('resize', moveNavIndicator);
 
-    // Click handler untuk animasi langsung
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             navLinks.forEach(l => l.classList.remove('active'));
