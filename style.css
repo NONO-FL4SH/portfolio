@@ -1,5 +1,6 @@
 /* --- CSS VARIABLES & RESET --- */
 :root {
+    /* Color Palette: Merah, Hitam, Putih */
     --bg-dark: #070708;                     /* Black Base */
     --bg-card: rgba(18, 18, 20, 0.75);       /* Deep Black Glass */
     --bg-glass-hover: rgba(239, 68, 68, 0.2); /* Crimson Red Glow */
@@ -83,7 +84,7 @@ a {
     padding: 0 2rem;
 }
 
-/* --- NAVBAR WITH SLIDING INDICATOR --- */
+/* --- NAVBAR DESKTOP --- */
 .navbar {
     position: fixed;
     top: 0;
@@ -449,7 +450,6 @@ section {
     justify-content: center;
 }
 
-/* KARTU PROYEK (DIPASTIKAN SELALU TAMPIL DENGAN VISIBLE DEFAULT) */
 .projects-grid.custom-5-grid .project-card {
     width: calc((100% - 4rem) / 3);
     background: var(--bg-card);
@@ -459,7 +459,7 @@ section {
     display: flex;
     flex-direction: column;
     backdrop-filter: blur(16px);
-    opacity: 1; /* Langsung Kelihatan tanpa tertahan JS */
+    opacity: 1;
     transform: translateY(0);
     transition: var(--transition-smooth);
 }
@@ -677,7 +677,7 @@ footer {
     transform: scale(1.15) rotate(5deg);
 }
 
-/* --- RESPONSIVE DESIGN --- */
+/* --- RESPONSIVE TABLET --- */
 @media (max-width: 992px) {
     .projects-grid.custom-5-grid .project-card {
         width: calc((100% - 2rem) / 2);
@@ -687,10 +687,8 @@ footer {
     }
 }
 
-@media (max-width: 680px) {
-    .nav-links {
-        display: none;
-    }
+/* --- FLOATING BOTTOM NAVBAR UNTUK MOBILE / HP (WAJIB DI PALING BAWAH) --- */
+@media screen and (max-width: 680px) {
     .projects-grid.custom-5-grid .project-card {
         width: 100%;
     }
@@ -702,61 +700,45 @@ footer {
     section {
         padding: 60px 0;
     }
-}
 
-/* --- FLOATING BOTTOM NAVBAR FOR MOBILE (HP) --- */
-@media (max-width: 680px) {
-    /* Kembalikan Nav Links agar Tampil di Layar HP */
+    /* Paksa Nav Links Melayang di Bawah Layar HP */
     .nav-links {
         display: flex !important;
-        position: fixed;
-        bottom: 20px;                   /* Melayang di atas bagian bawah HP */
-        left: 50%;
-        transform: translateX(-50%);     /* Menempatkan Navbar persis di Tengah */
-        width: calc(100% - 40px);        /* Ada Jarak / Margin di Kiri & Kanan */
-        max-width: 380px;               /* Batas Lebar Maksimal Navbar HP */
-        justify-content: space-around;
-        align-items: center;
-        background: rgba(18, 18, 20, 0.85); /* Dark Liquid Glass Base */
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid var(--border-red);
-        border-radius: 40px;            /* Tampilan Kapsul Melayang (Floating Pill) */
-        padding: 6px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px var(--primary-glow);
-        z-index: 2000;
+        position: fixed !important;
+        bottom: 20px !important;
+        top: auto !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: calc(100% - 40px) !important;
+        max-width: 380px !important;
+        justify-content: space-around !important;
+        align-items: center !important;
+        background: rgba(18, 18, 20, 0.9) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        border: 1px solid var(--border-red) !important;
+        border-radius: 40px !important;
+        padding: 6px !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px var(--primary-glow) !important;
+        z-index: 9999 !important;
     }
 
-    /* Ukuran Tombol Navigasi di HP */
     .nav-links a {
-        font-size: 0.8rem;
-        padding: 8px 12px;
-        border-radius: 30px;
-        text-align: center;
-        white-space: nowrap;
+        font-size: 0.8rem !important;
+        padding: 8px 12px !important;
+        border-radius: 30px !important;
+        white-space: nowrap !important;
     }
 
-    /* Penyesuaian Indikator Kaca Meluncur di HP */
     .nav-indicator {
-        border-radius: 30px;
+        border-radius: 30px !important;
     }
 
-    /* Menyederhanakan Navbar Atas (Logo & Tombol Tetap di Atas) */
-    .navbar {
-        padding: 0.2rem 0;
-    }
-
-    .nav-container {
-        padding: 0.8rem 1.5rem;
-    }
-
-    /* Sembunyikan Tombol "Contact Me" di Nav Atas Agar Tidak Penuh */
     .nav-actions .nav-btn {
-        display: none;
+        display: none !important;
     }
 
-    /* Beri Jarak Tambahan di Bagian Bawah Halaman Agar Konten Tidak Tertutup Navbar */
     footer {
-        padding-bottom: 90px;
+        padding-bottom: 90px !important;
     }
 }
