@@ -11,7 +11,6 @@
     <meta property="og:description" content="Spesialis Pengembangan Dashboard, Database Management & Otomatisasi Data.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nono-fl4sh.github.io/portfolio/">
-    <!-- Gantilah URL gambar di bawah dengan screenshot portofolio kamu jika sudah ada -->
     <meta property="og:image" content="https://nono-fl4sh.github.io/portfolio/assets/preview.png">
 
     <!-- Google Fonts & Font Awesome Icons -->
@@ -74,7 +73,6 @@
                 </p>
                 <div class="hero-cta">
                     <a href="#projects" class="nav-btn" data-id="View Projects" data-en="View Projects">View Projects</a>
-                    <!-- TOMBOL DOWNLOAD CV -->
                     <a href="assets/CV_Devano.pdf" download class="btn-secondary" data-id="Download CV" data-en="Download CV">
                         <i class="fa-solid fa-download"></i> Download CV
                     </a>
@@ -142,7 +140,27 @@
 
             <div class="projects-grid custom-5-grid">
                 
-                <!-- Project 1 -->
+                <!-- Project 1: Cashier Demo (Proyek Baru) -->
+                <div class="project-card" data-category="operations">
+                    <div class="project-img"><i class="fa-solid fa-cash-register"></i></div>
+                    <div class="project-info">
+                        <h3>POS & Cashier System Demo</h3>
+                        <p>Sistem kasir (Point of Sale) interaktif untuk manajemen transaksi, pencatatan item belanja, dan simulasi alur pembayaran secara real-time.</p>
+                        <div class="project-footer">
+                            <div class="skill-tags">
+                                <span class="tag">JavaScript</span><span class="tag">HTML/CSS</span>
+                            </div>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="btn-detail" onclick="openModal('cashier')">Detail <i class="fa-solid fa-arrow-right"></i></button>
+                                <a href="https://nono-fl4sh.github.io/cashier-demo" target="_blank" class="btn-detail" style="border-color: var(--primary);" title="Live Demo">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
                 <div class="project-card" data-category="analytics">
                     <div class="project-img"><i class="fa-solid fa-store"></i></div>
                     <div class="project-info">
@@ -157,7 +175,7 @@
                     </div>
                 </div>
 
-                <!-- Project 2 -->
+                <!-- Project 3 -->
                 <div class="project-card" data-category="analytics">
                     <div class="project-img"><i class="fa-solid fa-chart-line"></i></div>
                     <div class="project-info">
@@ -172,7 +190,7 @@
                     </div>
                 </div>
 
-                <!-- Project 3 -->
+                <!-- Project 4 -->
                 <div class="project-card" data-category="analytics">
                     <div class="project-img"><i class="fa-solid fa-wrench"></i></div>
                     <div class="project-info">
@@ -187,7 +205,7 @@
                     </div>
                 </div>
 
-                <!-- Project 4 -->
+                <!-- Project 5 -->
                 <div class="project-card" data-category="operations">
                     <div class="project-img"><i class="fa-solid fa-user-check"></i></div>
                     <div class="project-info">
@@ -202,7 +220,7 @@
                     </div>
                 </div>
 
-                <!-- Project 5 -->
+                <!-- Project 6 -->
                 <div class="project-card" data-category="operations">
                     <div class="project-img"><i class="fa-solid fa-user-shield"></i></div>
                     <div class="project-info">
@@ -253,7 +271,6 @@
                     </div>
                 </div>
 
-                <!-- Contact Form (Terkoneksi EmailJS) -->
                 <form id="contactForm">
                     <div class="form-group">
                         <label data-id="Your Name" data-en="Your Name">Your Name</label>
@@ -278,9 +295,7 @@
     <div id="projectModal" class="modal-overlay" onclick="closeModal(event)">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModalDirect()">&times;</button>
-            <div id="modalBody">
-                <!-- Konten Modal Diisi Otomatis Lewat JS -->
-            </div>
+            <div id="modalBody"></div>
         </div>
     </div>
 

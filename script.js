@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function highlightNavOnScroll() {
-        if (isSwiping) return; // Mencegah konflik saat user sedang menggeser jari
+        if (isSwiping) return;
 
         const scrollY = window.pageYOffset;
         sections.forEach(current => {
@@ -120,7 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentTouchX = e.touches[0].clientX;
             const deltaX = currentTouchX - touchStartX;
 
-            // Batas pergeseran agar indikator tidak melompat keluar dari kapsul
             const maxLeft = navContainer.offsetWidth - navIndicator.offsetWidth - 12;
             let newLeft = currentLeftPos + deltaX;
 
@@ -134,7 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
             isSwiping = false;
             navIndicator.classList.remove('swiping');
 
-            // Cari tombol/link yang posisinya paling dekat dengan lokasi jari dilepas
             const indicatorRect = navIndicator.getBoundingClientRect();
             const indicatorCenter = indicatorRect.left + (indicatorRect.width / 2);
 
@@ -152,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // Aktifkan link terdekat & scroll halus ke section tujuan
             navLinks.forEach(l => l.classList.remove('active'));
             closestLink.classList.add('active');
             moveNavIndicator();
@@ -205,6 +202,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* --- 6. MODAL CASE STUDY LOGIC --- */
 const projectData = {
+    cashier: {
+        title: "POS & Cashier System Demo",
+        tag: "Interactive Point of Sale Demo",
+        problem: "Proses transaksi manual sering lambat dan berpotensi menimbulkan ketidakcocokan dalam pencatatan barang serta total tagihan.",
+        features: [
+            "Simulasi antarmuka kasir cepat dan intuitif",
+            "Kalkulasi total belanja dan kembalian secara otomatis",
+            "Manajemen daftar barang dan ringkasan transaksi",
+            "Akses langsung live demo interaktif"
+        ]
+    },
     gmb: {
         title: "Dashboard GMB (Google My Business)",
         tag: "Analytics & Monitoring System",
